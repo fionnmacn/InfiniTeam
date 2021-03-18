@@ -10,69 +10,116 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.parse.FindCallback;
-import com.parse.GetCallback;
-import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-
 public class Tasks extends AppCompatActivity {
 
-    private final String TAG = Tasks.class.getSimpleName();
     private ListView lv;
-    private List tasks;
+    private ArrayList<HashMap<String, Object>> list;
+    String[] from = { "description","time"};
+    int[] to = {R.id.firstLine, R.id.secondLine};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tasks);
 
-        tasks = new ArrayList<>();
-        lv = (ListView) findViewById(R.id.taskList);
-    }
+        lv = findViewById(R.id.list);
+//        new GetTasks().execute();
 
-    private class GetTasks extends AsyncTask<Void, Void, Void> {
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            Toast.makeText(Tasks.this,"Downloading",Toast.LENGTH_LONG).show();
-        }
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Tasks");
+        query.whereEqualTo("completed", false);
+        query.findInBackground((taskList, e) -> {
+            if (e == null) {
+                Log.d("tasks", "Retrieved " + taskList.size() + " tasks");
+                Log.d("taskList", taskList.toString());
 
-        @Override
-        protected Void doInBackground(Void... arg0) {
+                if(taskList.size()>0 ){
+                    for (ParseObject task : taskList) {
+                        String taskDesc = task.getString("description");
+                        String taskTime = task.getString("createdAt");
+                        //Log.d("task", taskDesc);
 
-            ParseQuery<ParseObject> query = ParseQuery.getQuery("Tasks");
-            query.whereEqualTo("completed", "false");
-            query.findInBackground(new FindCallback<ParseObject>() {
-                public void done(List<ParseObject> taskList, ParseException e) {
-                    if (e == null) {
-                        Log.d("score", "Retrieved " + taskList.size() + " scores");
-                    } else {
-                        Log.d("score", "Error: " + e.getMessage());
+                        HashMap<String, Object> map = new HashMap<>();
+                        // Data entry in HashMap
+                        map.put("description", taskDesc);
+                        map.put("time", taskTime);
+                        // adding the HashMap to the ArrayList
+                        list.add(map);
                     }
                 }
-            });
+            } else {
+                Log.d("tasks", "Error: " + e.getMessage());
+            }
+        });
 
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            super.onPostExecute(result);
-            ListAdapter adapter = new SimpleAdapter(Tasks.this,
-                    tasks,
-                    R.layout.task_list,
-                    new String[]{ "email","mobile"},
-                    new int[]{R.id.email, R.id.mobile});
-            lv.setAdapter(adapter);
-        }
+        ListAdapter adapter = new SimpleAdapter(Tasks.this,
+                list,
+                R.layout.task_list,
+                from,
+                to);
+        lv.setAdapter(adapter);
     }
+
+
+
+
+
+
+
+
+
+//    private class GetTasks extends AsyncTask<Void, Void, Void> {
+//        @Override
+//        protected void onPreExecute() {
+//            super.onPreExecute();
+//            Toast.makeText(Tasks.this,"Downloading",Toast.LENGTH_LONG).show();
+//        }
+//
+//        @Override
+//        protected void doInBackground(Void... arg0) {
+//
+//            ParseQuery<ParseObject> query = ParseQuery.getQuery("Tasks");
+//            query.whereEqualTo("completed", false);
+//            query.findInBackground((taskList, e) -> {
+//                if (e == null) {
+//                    Log.d("tasks", "Retrieved " + taskList.size() + " tasks");
+//                    Log.d("taskList", taskList.toString());
+//
+//                    if(taskList.size()>0 ){
+//                        for (ParseObject task : taskList) {
+//                            String taskDesc = task.getString("description");
+//                            String taskTime = task.getString("createdAt");
+//                            //Log.d("task", taskDesc);
+//
+//                            HashMap<String, Object> map = new HashMap<>();
+//                            // Data entry in HashMap
+//                            map.put("description", taskDesc);
+//                            map.put("time", taskTime);
+//                            // adding the HashMap to the ArrayList
+//                            list.add(map);
+//                        }
+//                    }
+//                } else {
+//                    Log.d("tasks", "Error: " + e.getMessage());
+//                }
+//            });
+//            return null;
+//        }
+//
+//        @Override
+//        protected void onPostExecute(void result) {
+//            super.onPostExecute(result);
+//            ListAdapter adapter = new SimpleAdapter(Tasks.this,
+//                    list,
+//                    R.layout.task_list,
+//                    from,
+//                    to);
+//            lv.setAdapter(adapter);
+//        }
+//    }
 }

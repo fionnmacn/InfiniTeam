@@ -5,18 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/Search"
-        android:layout_width="320dp"
+    <ImageButton
+        android:id="@+id/profileButton"
+        android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="240dp"
-        android:onClick="openSearch"
-        android:text="Notices"
-        android:textSize="30sp"
-        android:textStyle="bold"
+        android:layout_marginTop="24dp"
+        android:adjustViewBounds="true"
+        android:background="#FFFFFF"
+        android:scaleType="fitCenter"
+        android:onClick="openProfile"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/breaksShortcut" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/profile01" />
 
     <ImageButton
         android:id="@+id/settingsButton"
@@ -29,22 +30,10 @@
         android:paddingHorizontal="4dp"
         android:paddingVertical="4dp"
         android:scaleType="fitCenter"
+        android:onClick="openSettings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/settings01" />
-
-    <ImageButton
-        android:id="@+id/profileButton"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:adjustViewBounds="true"
-        android:background="#FFFFFF"
-        android:scaleType="fitCenter"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/profile01" />
 
     <TextView
         android:id="@+id/tasksShortcut"
@@ -65,6 +54,7 @@
         android:layout_height="64dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
+        android:onClick="openBreaks"
         android:text="Breaks"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -82,5 +72,22 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/breaksShortcut" />
+
+    <Button
+        android:id="@+id/search_button"
+        android:layout_width="224dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="60dp"
+        android:background="#283593"
+        android:text="@android:string/search_go"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:cornerRadius="6dp"
+        android:onClick="openSearch"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noticesShortcut"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,6 +18,8 @@
         <activity android:name=".Home" />
         <activity android:name=".Tasks" />
         <activity android:name=".ProductSearch" />
+        <activity android:name=".Breaks" />
+        <activity android:name=".Profile" />
         <meta-data
             android:name="com.parse.SERVER_URL"
             android:value="@string/back4app_server_url" />
