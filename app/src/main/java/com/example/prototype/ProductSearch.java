@@ -1,7 +1,5 @@
 package com.example.prototype;
 
-import android.annotation.SuppressLint;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListAdapter;
@@ -13,94 +11,62 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.parse.FunctionCallback;
 import com.parse.ParseCloud;
+import com.parse.ParseException;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class ProductSearch extends AppCompatActivity {
-
-    private final String TAG = ProductSearch.class.getSimpleName();
-    ArrayList<HashMap<String, String>> productList;
-    ListView lv;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+        ListView listview = findViewById(R.id.list);
 
-        productList = new ArrayList<>();
-        new GetData().execute();
-        lv = (ListView) findViewById(R.id.list);
-    }
-
-    private class GetData extends AsyncTask<Void, Void, Void> {
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-        @Override
-        protected Void doInBackground(Void... arg0) {
-            Map<String, String> parameters = new HashMap<>();
-            ParseCloud.callFunctionInBackground("test", parameters, (FunctionCallback<String>) (cloud_response, e) -> {
-                if (cloud_response != null) {
-                    try {
-                        JSONObject jsonObj = new JSONObject(cloud_response);
-                        // Getting JSON Array node
-                        JSONArray products = jsonObj.getJSONArray("products");
-                        // loop through all nodes
-                        for (int i = 0; i < products.length(); i++) {
-                            JSONObject c = products.getJSONObject(i);
-                            String id = c.getString("id");
-                            String name = c.getString("name");
-
-                            // hash map for single item
-                            HashMap<String, String> product = new HashMap<>();
-
-                            // adding each node to HashMap
-                            product.put("id", id);
-                            product.put("name", name);
-//                            for (int j = 0; j < productDetails.length(); j++) {
-//                                JSONObject detail = productDetails.getJSONObject(j);
-//                                if (detail.getString("id").equals(id)) {
-//                                    procedure.put("category", detail.getString("category"));
-//                                }
-//                            }
-                            // add data to list
-                            productList.add(product);
-                        }
-                        Log.e(TAG, productList.toString());
-                    } catch (final JSONException err) {
-                        Log.e(TAG, "Error: " + err.getMessage());
-                        runOnUiThread(() -> Toast.makeText(getApplicationContext(),
-                                "Error: " + err.getMessage(),
-                                Toast.LENGTH_LONG).show());
-                    }
-                } else {
-                    Log.e(TAG, "Couldn't get data from server.");
-                    runOnUiThread(() -> Toast.makeText(getApplicationContext(),
-                            "Couldn't get data from server: " + e.getMessage(),
-                            Toast.LENGTH_LONG).show());
+        HashMap<String, String> params = new HashMap<>();
+        ParseCloud.callFunctionInBackground("products", params, new FunctionCallback<ArrayList>() {
+            public void done(ArrayList data, ParseException e) {
+                if (e == null) {
+                    Log.d("RESPONSE", data.toString());
                 }
-            });
-            return null;
-        }
-        @Override
-        protected void onPostExecute(Void result) {
-            super.onPostExecute(result);
-            ListAdapter adapter = new SimpleAdapter(ProductSearch.this,
-                    productList,
-                    R.layout.list,
-                    new String[]{"name","id"},
-                    new int[]{R.id.name, R.id.id});
-
-            lv.setAdapter(adapter);
-
-        }
+//                try {
+//                    Log.d("response", response);
+//                    JSONObject jsObj = new JSONObject(response);
+//                    Log.d("newJSON", jsObj.toString());
+//                    try {
+//                        ArrayList<HashMap<String, String>> userList = new ArrayList<>();
+//
+//                        JSONArray jsArray = jsObj.getJSONArray("products");
+//                        for (int i = 0; i < jsArray.length(); i++) {
+//                            HashMap<String, String> stu = new HashMap<>();
+//                            JSONObject obj = jsArray.getJSONObject(i);
+//                            stu.put("id", obj.getString("id"));
+//                            stu.put("name", obj.getString("name"));
+//                            userList.add(stu);
+//                        }
+//                        Log.d("listArray", userList.toString());
+//                        ListAdapter simpleAdapter = new SimpleAdapter(ProductSearch.this,
+//                                userList,
+//                                R.layout.list,
+//                                new String[]{"id", "name"},
+//                                new int[]{R.id.id, R.id.name});
+//                        listview.setAdapter(simpleAdapter);
+//                    } catch (JSONException ex) {
+//                        Log.e("JsonParserIn", "Exception", ex);
+//                    }
+//                } catch (JSONException jsonException) {
+//                    Log.e("JsonParserOut", "Exception", jsonException);
+//                }
+                else {
+                    Log.e("cloudCode", e.toString());
+                }
+            }
+        });
     }
 }

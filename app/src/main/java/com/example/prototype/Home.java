@@ -35,7 +35,7 @@ public class Home extends AppCompatActivity {
     }
 
     public void openSearch(View view) {
-        Intent intent = new Intent(this, ProductSearch.class);
+        Intent intent = new Intent(this, ProductSearch3.class);
         startActivity(intent);
     }
 }

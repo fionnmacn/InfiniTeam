@@ -1,4 +1,6 @@
 package com.example.prototype;
 
-public class Profile {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Profile extends AppCompatActivity {
 }
