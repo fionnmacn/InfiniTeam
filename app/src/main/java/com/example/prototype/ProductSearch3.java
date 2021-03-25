@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ProductSearch3 extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

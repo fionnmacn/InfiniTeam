@@ -10,4 +10,9 @@
     <string name="decline_task">Decline</string>
     <string name="current_task_header">Current Task</string>
     <string name="available_tasks_header">Available Tasks</string>
+    <string name="date">Date</string>
+    <string name="hours">Hours:</string>
+    <string name="notices"><u>Notices</u></string>
+    <string name="rota"><u>Rota</u></string>
+    <string name="tasks"><u>Tasks</u></string>
 </resources>

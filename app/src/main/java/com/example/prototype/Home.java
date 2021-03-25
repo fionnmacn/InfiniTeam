@@ -30,7 +30,7 @@ public class Home extends AppCompatActivity {
     }
 
     public void openBreaks(View view) {
-        Intent intent = new Intent(this, Breaks.class);
+        Intent intent = new Intent(this, Hours.class);
         startActivity(intent);
     }
 

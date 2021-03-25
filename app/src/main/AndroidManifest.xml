@@ -20,7 +20,9 @@
         <activity android:name=".ProductSearch" />
         <activity android:name=".ProductSearch2" />
         <activity android:name=".ProductSearch3" />
-        <activity android:name=".Breaks" />
+        <activity android:name=".Hours" />
+        <activity android:name=".AvailableHours" />
+        <activity android:name=".SelectHours" />
         <activity android:name=".Profile" />
         <meta-data
             android:name="com.parse.SERVER_URL"
