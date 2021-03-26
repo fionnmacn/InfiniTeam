@@ -17,8 +17,6 @@
         </activity>
         <activity android:name=".Home" />
         <activity android:name=".Tasks" />
-        <activity android:name=".ProductSearch" />
-        <activity android:name=".ProductSearch2" />
         <activity android:name=".ProductSearch3" />
         <activity android:name=".Hours" />
         <activity android:name=".AvailableHours" />

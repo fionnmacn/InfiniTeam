@@ -63,6 +63,7 @@ public class AvailableHours extends AppCompatActivity {
                 listview.setAdapter(simpleAdapter);
             }
         });
+
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 HashMap<String, String> selected_shift = (HashMap<String, String>) parent.getItemAtPosition(position);

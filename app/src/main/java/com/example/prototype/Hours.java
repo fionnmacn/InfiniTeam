@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -112,6 +113,10 @@ public class Hours extends AppCompatActivity {
                             if (e == null) {
                                 hours.put("giveaway", true);
                                 hours.saveInBackground();
+                                Toast.makeText(Hours.this, "Shift made available to others.", Toast.LENGTH_LONG).show();
+                            }
+                            else {
+                                Toast.makeText(Hours.this, e.getMessage(), Toast.LENGTH_LONG).show();
                             }
                         }
                     });

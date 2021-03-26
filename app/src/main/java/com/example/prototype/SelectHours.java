@@ -57,7 +57,10 @@ public class SelectHours extends AppCompatActivity {
                             hours.put("user", username);
                             hours.saveInBackground();
                             Toast.makeText(SelectHours.this, "Shift added to rota", Toast.LENGTH_LONG).show();
-                            finish();
+                            SelectHours.this.finish();
+                        }
+                        else {
+                            Toast.makeText(SelectHours.this, e.getMessage(), Toast.LENGTH_LONG).show();
                         }
                     }
                 });

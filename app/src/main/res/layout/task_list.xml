@@ -2,52 +2,44 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="?android:attr/listPreferredItemHeight"
-    android:padding="6dip" >
+    android:padding="4dp" >
 
     <TextView
-        android:id="@+id/firstLine"
+        android:id="@+id/description"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/secondLine"
+        android:layout_above="@id/createdAt"
         android:layout_alignParentTop="true"
         android:layout_alignWithParentIfMissing="true"
         android:layout_toStartOf="@id/accept"
         android:gravity="center_vertical"
-        android:textSize="16sp" />
+        android:textSize="22sp" />
 
     <TextView
-        android:id="@+id/secondLine"
-        android:layout_width="fill_parent"
+        android:id="@+id/createdAt"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_toStartOf="@id/accept"
         android:ellipsize="marquee"
-        android:textSize="12sp"
+        android:textSize="16sp"
         android:singleLine="true" />
+
+    <TextView
+        android:id="@+id/objectId"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
 
     <Button
         android:id="@+id/accept"
-        android:layout_width="72dp"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="0dp"
-        android:layout_toStartOf="@id/decline"
+        android:layout_alignParentEnd="true"
         android:backgroundTint="#558B2F"
         android:text="@string/accept_task"
-        android:textSize="8sp"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/decline"
-        android:layout_width="72dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="0dp"
-        android:backgroundTint="#AD1457"
-        android:text="@string/decline_task"
         android:textSize="8sp"
         android:textStyle="bold" />
 
