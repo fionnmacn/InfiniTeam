@@ -1,32 +1,36 @@
 package com.example.prototype;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.parse.FindCallback;
 import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.TimeZone;
 import java.util.Date;
+import java.util.TimeZone;
 
 public class Hours extends AppCompatActivity {
 
     CalendarView calendar;
     TextView date;
     TextView hours;
+    Button giveaway;
+    String hours_obj = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +39,7 @@ public class Hours extends AppCompatActivity {
         date = findViewById(R.id.date);
         hours = findViewById(R.id.hours);
         calendar = findViewById(R.id.calendar);
+        giveaway = findViewById(R.id.hours_button);
 
         calendar.setDate(System.currentTimeMillis(),false,true);
         calendar.setFirstDayOfWeek(2);
@@ -43,7 +48,6 @@ public class Hours extends AppCompatActivity {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
                 // Add 1 in month because month index is start with 0
-                long workDate;
                 String Date = dayOfMonth + "-" + (month + 1) + "-" + year;
                 date.setText(Date);
                 hours.setText("");
@@ -56,7 +60,7 @@ public class Hours extends AppCompatActivity {
                 c.set(Calendar.MILLISECOND, 0);
                 Date start = c.getTime();
                 TimeZone tz = TimeZone.getTimeZone("UTC");
-                DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'");
+                @SuppressLint("SimpleDateFormat") DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'");
                 df.setTimeZone(tz);
                 String start_fmt = df.format(start);
                 System.out.println(start_fmt);
@@ -66,7 +70,11 @@ public class Hours extends AppCompatActivity {
                 String end_fmt = df.format(end);
                 System.out.println(end_fmt);
 
+                ParseUser currentUser = ParseUser.getCurrentUser();
+                String username = currentUser.getString("username");
+                Log.d("CURRENT_USER", username);
                 ParseQuery<ParseObject> query = ParseQuery.getQuery("Shifts");
+                query.whereEqualTo("user", username);
                 query.whereGreaterThanOrEqualTo("start", start);
                 query.whereLessThan("start", end);
                 query.getFirstInBackground(new GetCallback<ParseObject>() {
@@ -82,6 +90,9 @@ public class Hours extends AppCompatActivity {
                             String shift = hour_start + " - " + hour_end;
                             Log.d("hours", shift);
                             hours.setText(shift);
+
+                            hours_obj = object.getObjectId();
+                            Log.d("OBJECT", hours_obj);
                         } else {
                             Log.d("query", "Query failed.");
                         }
@@ -89,6 +100,28 @@ public class Hours extends AppCompatActivity {
                 });
             }
         });
+
+        giveaway.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (hours_obj != null) {
+                    Log.d("OBJECT", hours_obj);
+                    ParseQuery<ParseObject> query = ParseQuery.getQuery("Shifts");
+                    query.getInBackground(hours_obj, new GetCallback<ParseObject>() {
+                        public void done(ParseObject hours, ParseException e) {
+                            if (e == null) {
+                                hours.put("giveaway", true);
+                                hours.saveInBackground();
+                            }
+                        }
+                    });
+                }
+                else {
+                    Log.d("OBJECT", "Object is null");
+                }
+            }
+        });
+
     }
 
     public void openAvailableHours(View view) {

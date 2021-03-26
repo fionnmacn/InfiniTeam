@@ -16,8 +16,7 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
-import org.json.JSONObject;
-
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -40,12 +39,18 @@ public class AvailableHours extends AppCompatActivity {
                     HashMap<String, String> hours = new HashMap<>();
                     ParseObject object = availableList.get(i);
                     Log.d("OBJECT", object.toString());
+
+                    SimpleDateFormat spf = new SimpleDateFormat("EEEE dd MMM, hh:mm aaa");
                     Date shift_start = object.getDate("start");
+                    String shift_start_spf = spf.format(shift_start);
                     Date shift_end = object.getDate("end");
-                    String user = object.getString("user");
-                    hours.put("user", user);
-                    hours.put("start", shift_start.toString());
-                    hours.put("end", shift_end.toString());
+                    String shift_end_spf = spf.format(shift_end);
+
+                    String id = object.getObjectId();
+
+                    hours.put("objectId", id);
+                    hours.put("start", shift_start_spf);
+                    hours.put("end", shift_end_spf);
                     hoursList.add(hours);
                 }
                 Log.d("LIST", String.valueOf(hoursList));
@@ -53,22 +58,24 @@ public class AvailableHours extends AppCompatActivity {
                 ListAdapter simpleAdapter = new SimpleAdapter(AvailableHours.this,
                         hoursList,
                         R.layout.hours_list,
-                        new String[]{"start", "end"},
-                        new int[]{R.id.start, R.id.end});
+                        new String[]{"start", "end", "objectId"},
+                        new int[]{R.id.start, R.id.end, R.id.objectId});
                 listview.setAdapter(simpleAdapter);
             }
         });
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 HashMap<String, String> selected_shift = (HashMap<String, String>) parent.getItemAtPosition(position);
-//                String user = selected_shift.get("user");
-                String start = selected_shift.get("start");
-                String end = selected_shift.get("end");
+                String objectId_clicked = selected_shift.get("objectId");
+                Log.d("OBJECT_ID", objectId_clicked);
+                String start_clicked = selected_shift.get("start");
+                String end_clicked = selected_shift.get("end");
 
                 Intent intent = new Intent(AvailableHours.this, SelectHours.class);
-//                intent.putExtra("user", user);
-                intent.putExtra("start", start);
-                intent.putExtra("end", end);
+                intent.putExtra("objectId", objectId_clicked);
+                intent.putExtra("start", start_clicked);
+                intent.putExtra("end", end_clicked);
+
                 startActivity(intent);
                 finish();
             }
