@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -113,10 +114,12 @@ public class Hours extends AppCompatActivity {
                             if (e == null) {
                                 hours.put("giveaway", true);
                                 hours.saveInBackground();
-                                Toast.makeText(Hours.this, "Shift made available to others.", Toast.LENGTH_LONG).show();
+                                Snackbar.make(v, "Shift made available to others.", Snackbar.LENGTH_LONG)
+                                        .setAction("Action", null).show();
                             }
                             else {
-                                Toast.makeText(Hours.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                                Snackbar.make(v, e.getMessage(), Snackbar.LENGTH_LONG).show();
+
                             }
                         }
                     });

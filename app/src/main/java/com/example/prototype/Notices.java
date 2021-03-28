@@ -1,7 +1,9 @@
 package com.example.prototype;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -9,6 +11,8 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -19,9 +23,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Notices extends AppCompatActivity {
+public class Notices extends AppCompatActivity implements NoticeAdapter.SelectedNotice{
     Toolbar toolbar;
     RecyclerView recyclerView;
+    FloatingActionButton fab;
 
     List<NoticeModel> noticeModelList = new ArrayList<>();
     NoticeAdapter noticeAdapter;
@@ -32,6 +37,7 @@ public class Notices extends AppCompatActivity {
         setContentView(R.layout.activity_notices);
         recyclerView = findViewById(R.id.notice_recyclerView);
         toolbar = findViewById(R.id.notice_toolbar);
+        fab = findViewById(R.id.notice_create);
         this.setSupportActionBar(toolbar);
         this.getSupportActionBar().setTitle("");
 
@@ -40,6 +46,16 @@ public class Notices extends AppCompatActivity {
 
         ParseUser user = ParseUser.getCurrentUser();
         String currentUser = user.getUsername();
+        Log.d("USER", currentUser);
+        boolean elevated = user.getBoolean("elevated");
+        Log.d("ELEVATED", String.valueOf(elevated));
+
+        if (elevated) {
+            fab.show();
+        } else {
+            fab.hide();
+        }
+
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Notices");
         query.whereNotEqualTo("dismissed", currentUser);
         query.findInBackground(new FindCallback<ParseObject>() {
@@ -58,11 +74,28 @@ public class Notices extends AppCompatActivity {
 
                     NoticeModel noticeModel = new NoticeModel(id, subject, content);
                     noticeModelList.add(noticeModel);
-//                    Log.d("NOTICES", noticeModelList.toString());
                 }
-                noticeAdapter = new NoticeAdapter(noticeModelList);
-                recyclerView.setAdapter(noticeAdapter);
+                callAdapter(noticeModelList);
             }
         });
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    @Override
+    public void selectedNotice(NoticeModel noticeModel) {
+        startActivity(new Intent(Notices.this, SelectedNotice.class).putExtra("data", noticeModel));
+    }
+
+    public void callAdapter(List<NoticeModel> noticeModelList) {
+        Log.d("LIST_OUT", "List should be after this");
+        Log.d("LIST_OUT", noticeModelList.toString());
+        noticeAdapter = new NoticeAdapter(noticeModelList, this);
+        recyclerView.setAdapter(noticeAdapter);
     }
 }

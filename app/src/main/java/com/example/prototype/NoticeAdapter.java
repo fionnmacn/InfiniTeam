@@ -15,9 +15,11 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.NoticeAdap
 
     private List<NoticeModel> noticeModelList;
     private Context context;
+    private SelectedNotice selectedNotice;
 
-    public NoticeAdapter(List<NoticeModel> noticeModelList) {
+    public NoticeAdapter(List<NoticeModel> noticeModelList, SelectedNotice selectedNotice) {
         this.noticeModelList = noticeModelList;
+        this. selectedNotice = selectedNotice;
     }
 
     @NonNull
@@ -46,6 +48,10 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.NoticeAdap
         return noticeModelList.size();
     }
 
+    public interface SelectedNotice{
+        void selectedNotice(NoticeModel noticeModel);
+    }
+
     public class NoticeAdapterVh extends RecyclerView.ViewHolder {
 
         TextView tvId;
@@ -57,6 +63,13 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.NoticeAdap
             tvId = itemView.findViewById(R.id.notice_id);
             tvSubject = itemView.findViewById(R.id.notice_subject);
             tvContent = itemView.findViewById(R.id.notice_content);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    selectedNotice.selectedNotice(noticeModelList.get(getAdapterPosition()));
+                }
+            });
         }
     }
 }

@@ -1,6 +1,8 @@
 package com.example.prototype;
 
-public class NoticeModel {
+import java.io.Serializable;
+
+public class NoticeModel implements Serializable {
 
     private String id;
     private String subject;

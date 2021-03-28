@@ -59,21 +59,4 @@ public class Login extends AppCompatActivity {
             }
         });
     }
-
-    /////////////////////////////////////////////////////
-    // EXAMPLE - CREATE PARSE OBJECT AND SAVE TO SERVER//
-    /////////////////////////////////////////////////////
-    public void createObject() {
-        ParseObject entity = new ParseObject("B4aVehicle");
-
-        entity.put("name", "This is a test");
-        entity.put("price", 999);
-        entity.put("color", "Green");
-
-        // Saves the new object.
-        // Notice that the SaveCallback is totally optional!
-        entity.saveInBackground(e -> {
-            // Here you can handle errors, if thrown. Otherwise, "e" should be null
-        });
-    }
 }

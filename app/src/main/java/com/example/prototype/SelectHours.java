@@ -2,14 +2,13 @@ package com.example.prototype;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -56,11 +55,11 @@ public class SelectHours extends AppCompatActivity {
                             hours.put("giveaway", false);
                             hours.put("user", username);
                             hours.saveInBackground();
-                            Toast.makeText(SelectHours.this, "Shift added to rota", Toast.LENGTH_LONG).show();
+                            Snackbar.make(v, "Shift added to rota", Snackbar.LENGTH_LONG).show();
                             SelectHours.this.finish();
                         }
                         else {
-                            Toast.makeText(SelectHours.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                            Snackbar.make(v, e.getMessage(), Snackbar.LENGTH_LONG).show();
                         }
                     }
                 });

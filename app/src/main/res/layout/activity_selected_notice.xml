@@ -6,11 +6,12 @@
 
     <TextView
         android:id="@+id/notice_selected_heading"
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
         android:text="Subject: "
         android:textSize="32sp"
         android:textStyle="bold"
+        android:gravity="center_vertical"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="4dp"
@@ -18,12 +19,12 @@
 
     <TextView
         android:id="@+id/notice_selected_subject"
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text=""
-        android:textSize="24sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/notice_selected_heading"
+        android:textSize="32sp"
+        app:layout_constraintTop_toBottomOf="@id/notice_selected_heading"
+        app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"/>
 
@@ -34,7 +35,7 @@
         android:textSize="24sp"
         app:layout_constraintTop_toBottomOf="@id/notice_selected_subject"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp" />
+        android:layout_marginTop="20dp" />
 
     <Button
         android:id="@+id/archive_button"

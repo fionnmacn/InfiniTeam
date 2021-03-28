@@ -15,4 +15,6 @@
     <string name="notices"><u>Notices</u></string>
     <string name="rota"><u>Rota</u></string>
     <string name="tasks"><u>Tasks</u></string>
+    <string name="create_notice">Create notice</string>
+    <string name="notices_header">Notices</string>
 </resources>

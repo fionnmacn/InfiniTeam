@@ -13,10 +13,10 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.parse.FindCallback;
 import com.parse.GetCallback;
 import com.parse.ParseException;
@@ -130,7 +130,7 @@ public class Tasks extends AppCompatActivity {
                                 task.remove("assignedTo");
                                 task.saveInBackground();
                             }
-                            Toast.makeText(Tasks.this, "Task complete.", Toast.LENGTH_LONG).show();
+                            Snackbar.make(v, "Task complete.", Snackbar.LENGTH_LONG).show();
                             //recreate();  // Flashes screen, method below has smoother results
                             finish();
                             overridePendingTransition(0, 0);
@@ -157,7 +157,7 @@ public class Tasks extends AppCompatActivity {
                                 task.remove("assignedTo");
                                 task.saveInBackground();
                             }
-                            Toast.makeText(Tasks.this, "Task incomplete. Returned to shared list.", Toast.LENGTH_LONG).show();
+                            Snackbar.make(v, "Task incomplete. Returned to shared list.", Snackbar.LENGTH_LONG).show();
                             finish();
                             overridePendingTransition(0, 0);
                             startActivity(getIntent());
@@ -189,7 +189,7 @@ public class Tasks extends AppCompatActivity {
                                             task.put("assignedTo", user);
                                             task.saveInBackground();
                                         }
-                                        Toast.makeText(Tasks.this, "Selection assigned as current task.", Toast.LENGTH_LONG).show();
+                                        Snackbar.make(view, "Selection assigned as current task.", Snackbar.LENGTH_LONG).show();
                                         finish();
                                         overridePendingTransition(0, 0);
                                         startActivity(getIntent());
@@ -214,60 +214,4 @@ public class Tasks extends AppCompatActivity {
             }
         });
     }
-
-
-
-
-
-
-
-//    private class GetTasks extends AsyncTask<Void, Void, Void> {
-//        @Override
-//        protected void onPreExecute() {
-//            super.onPreExecute();
-//            Toast.makeText(Tasks.this,"Downloading",Toast.LENGTH_LONG).show();
-//        }
-//
-//        @Override
-//        protected void doInBackground(Void... arg0) {
-//
-//            ParseQuery<ParseObject> query = ParseQuery.getQuery("Tasks");
-//            query.whereEqualTo("completed", false);
-//            query.findInBackground((taskList, e) -> {
-//                if (e == null) {
-//                    Log.d("tasks", "Retrieved " + taskList.size() + " tasks");
-//                    Log.d("taskList", taskList.toString());
-//
-//                    if(taskList.size()>0 ){
-//                        for (ParseObject task : taskList) {
-//                            String taskDesc = task.getString("description");
-//                            String taskTime = task.getString("createdAt");
-//                            //Log.d("task", taskDesc);
-//
-//                            HashMap<String, Object> map = new HashMap<>();
-//                            // Data entry in HashMap
-//                            map.put("description", taskDesc);
-//                            map.put("time", taskTime);
-//                            // adding the HashMap to the ArrayList
-//                            list.add(map);
-//                        }
-//                    }
-//                } else {
-//                    Log.d("tasks", "Error: " + e.getMessage());
-//                }
-//            });
-//            return null;
-//        }
-//
-//        @Override
-//        protected void onPostExecute(void result) {
-//            super.onPostExecute(result);
-//            ListAdapter adapter = new SimpleAdapter(Tasks.this,
-//                    list,
-//                    R.layout.task_list,
-//                    from,
-//                    to);
-//            lv.setAdapter(adapter);
-//        }
-//    }
 }
