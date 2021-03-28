@@ -24,6 +24,8 @@
         <activity android:name=".SelectHours" />
         <activity android:name=".Profile" />
         <activity android:name=".Settings" />
+        <activity android:name=".SelectedNotice" />
+
         <meta-data
             android:name="com.parse.SERVER_URL"
             android:value="@string/back4app_server_url" />

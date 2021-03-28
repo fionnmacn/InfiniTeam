@@ -1,6 +1,7 @@
 package com.example.prototype;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -8,7 +9,14 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Notices extends AppCompatActivity {
@@ -16,11 +24,6 @@ public class Notices extends AppCompatActivity {
     RecyclerView recyclerView;
 
     List<NoticeModel> noticeModelList = new ArrayList<>();
-
-//    String[] objectIds = {"abc123", "aaa555", "911911"};
-    String[] subjects = {"Staff Meeting", "Important Reminder", "Holiday Requests", "Staff Party", "Safety Precautions", "Security Concerns"};
-//    String[] contents = {"Staff meeting on the 28th October", "Remember to check €50 notes", "All holiday requests must be made through a manager"};
-
     NoticeAdapter noticeAdapter;
 
     @Override
@@ -35,12 +38,31 @@ public class Notices extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
-        for (String s:subjects) {
-            NoticeModel noticeModel = new NoticeModel(s);
-            noticeModelList.add(noticeModel);
-        }
+        ParseUser user = ParseUser.getCurrentUser();
+        String currentUser = user.getUsername();
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Notices");
+        query.whereNotEqualTo("dismissed", currentUser);
+        query.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> noticeList, ParseException e) {
+                for (int i = 0; i < noticeList.size(); i++) {
+                    HashMap<String, String> notices = new HashMap<>();
+                    ParseObject object = noticeList.get(i);
+                    Log.d("OBJECT", object.toString());
 
-        noticeAdapter = new NoticeAdapter(noticeModelList);
-        recyclerView.setAdapter(noticeAdapter);
+                    String id = object.getObjectId();
+                    Log.d("NOTICE", id);
+                    String subject = object.getString("subject");
+                    Log.d("NOTICE", subject);
+                    String content = object.getString("content");
+                    Log.d("NOTICE", content);
+
+                    NoticeModel noticeModel = new NoticeModel(id, subject, content);
+                    noticeModelList.add(noticeModel);
+//                    Log.d("NOTICES", noticeModelList.toString());
+                }
+                noticeAdapter = new NoticeAdapter(noticeModelList);
+                recyclerView.setAdapter(noticeAdapter);
+            }
+        });
     }
 }

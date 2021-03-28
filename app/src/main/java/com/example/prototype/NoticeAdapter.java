@@ -32,9 +32,13 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.NoticeAdap
 
         NoticeModel noticeModel = noticeModelList.get(position);
 
+        String id = noticeModel.getId();
         String subject = noticeModel.getSubject();
+        String content = noticeModel.getContent();
 
-        holder.tvSubjectId.setText(subject);
+        holder.tvId.setText(id);
+        holder.tvSubject.setText(subject);
+        holder.tvContent.setText(content);
     }
 
     @Override
@@ -44,11 +48,15 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.NoticeAdap
 
     public class NoticeAdapterVh extends RecyclerView.ViewHolder {
 
-        TextView tvSubjectId;
+        TextView tvId;
+        TextView tvSubject;
+        TextView tvContent;
 
         public NoticeAdapterVh(@NonNull View itemView) {
             super(itemView);
-            tvSubjectId = itemView.findViewById(R.id.notice_subject);
+            tvId = itemView.findViewById(R.id.notice_id);
+            tvSubject = itemView.findViewById(R.id.notice_subject);
+            tvContent = itemView.findViewById(R.id.notice_content);
         }
     }
 }
