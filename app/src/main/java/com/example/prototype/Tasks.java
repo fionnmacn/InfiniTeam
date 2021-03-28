@@ -33,7 +33,6 @@ import java.util.List;
 
 public class Tasks extends AppCompatActivity {
 
-    private ListView listview;
     TextView selectedTask;
     private ArrayList<HashMap<String, String>> taskList;
     Button complete;
@@ -45,7 +44,7 @@ public class Tasks extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tasks);
-        listview = findViewById(R.id.list);
+        ListView listview = findViewById(R.id.list);
         selectedTask = findViewById(R.id.currentTask);
         complete = findViewById(R.id.complete);
         decline = findViewById(R.id.decline);

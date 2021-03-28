@@ -17,11 +17,13 @@
         </activity>
         <activity android:name=".Home" />
         <activity android:name=".Tasks" />
-        <activity android:name=".ProductSearch3" />
         <activity android:name=".Hours" />
+        <activity android:name=".Notices" />
+        <activity android:name=".ProductSearch3" />
         <activity android:name=".AvailableHours" />
         <activity android:name=".SelectHours" />
         <activity android:name=".Profile" />
+        <activity android:name=".Settings" />
         <meta-data
             android:name="com.parse.SERVER_URL"
             android:value="@string/back4app_server_url" />

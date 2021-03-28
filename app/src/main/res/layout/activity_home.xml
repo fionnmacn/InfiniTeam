@@ -67,6 +67,7 @@
         android:layout_height="64dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="42dp"
+        android:onClick="openNotices"
         android:text="@string/notices"
         android:textSize="42sp"
         android:textStyle="bold"

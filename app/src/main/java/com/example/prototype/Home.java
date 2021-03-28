@@ -38,4 +38,9 @@ public class Home extends AppCompatActivity {
         Intent intent = new Intent(this, ProductSearch3.class);
         startActivity(intent);
     }
+
+    public void openNotices(View view) {
+        Intent intent = new Intent(this, Notices.class);
+        startActivity(intent);
+    }
 }
