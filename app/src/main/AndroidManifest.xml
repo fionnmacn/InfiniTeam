@@ -18,8 +18,10 @@
         <activity android:name=".Home" />
         <activity android:name=".Tasks" />
         <activity android:name=".Hours" />
-        <activity android:name=".Notices" />
+        <activity android:name=".Notices" android:windowSoftInputMode="adjustPan" />
         <activity android:name=".ProductSearch3" />
+        <activity android:name=".Products" />
+        <activity android:name=".SelectedProduct" />
         <activity android:name=".AvailableHours" />
         <activity android:name=".SelectHours" />
         <activity android:name=".Profile" />

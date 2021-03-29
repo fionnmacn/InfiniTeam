@@ -4,21 +4,26 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.NoticeAdapterVh> {
+public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.NoticeAdapterVh> implements Filterable {
 
     private List<NoticeModel> noticeModelList;
+    private List<NoticeModel> getNoticeModelListFiltered;
     private Context context;
     private SelectedNotice selectedNotice;
 
     public NoticeAdapter(List<NoticeModel> noticeModelList, SelectedNotice selectedNotice) {
         this.noticeModelList = noticeModelList;
+        this.getNoticeModelListFiltered = noticeModelList;
         this. selectedNotice = selectedNotice;
     }
 
@@ -47,6 +52,44 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.NoticeAdap
     public int getItemCount() {
         return noticeModelList.size();
     }
+
+    @Override
+    public Filter getFilter() {
+
+        Filter filter = new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                FilterResults filterResults = new FilterResults();
+                if (constraint == null | constraint.length() == 0) {
+                    filterResults.count = getNoticeModelListFiltered.size();
+                    filterResults.values = getNoticeModelListFiltered;
+                }
+                else {
+                    String searched = constraint.toString().toLowerCase();
+                    List<NoticeModel> resultData = new ArrayList<>();
+
+                    for (NoticeModel noticeModel: getNoticeModelListFiltered) {
+                        if (noticeModel.getContent().toLowerCase().contains(searched)) {
+                            resultData.add(noticeModel);
+                        }
+                    }
+
+                    filterResults.count = resultData.size();
+                    filterResults.values = resultData;
+
+                }
+                return filterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                noticeModelList = (List<NoticeModel>) results.values;
+                notifyDataSetChanged();
+            }
+        };
+        return filter;
+    }
+
 
     public interface SelectedNotice{
         void selectedNotice(NoticeModel noticeModel);
