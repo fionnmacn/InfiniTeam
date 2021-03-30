@@ -69,7 +69,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductA
                     List<ProductModel> resultData = new ArrayList<>();
 
                     for (ProductModel productModel: getProductModelListFiltered) {
-                        if (productModel.getName().toLowerCase().contains(searched)) {
+                        if (productModel.getName().toLowerCase().contains(searched)
+                                | productModel.getDescription().toLowerCase().contains(searched)) {
                             resultData.add(productModel);
                         }
                     }

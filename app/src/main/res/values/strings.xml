@@ -17,4 +17,15 @@
     <string name="tasks"><u>Tasks</u></string>
     <string name="create_notice">Create notice</string>
     <string name="notices_header">Notices</string>
+    <string name="notices_alert_priority_desc">Icon to alert user to high priority notice</string>
+    <string name="login">Login</string>
+    <string name="send">Send</string>
+    <string name="priority_notice">Priority Notice?</string>
+    <string name="insert_message">Insert message here</string>
+    <string name="insert_subject">Insert subject line here</string>
+    <string name="message">Message:</string>
+    <string name="archive">Archive</string>
+    <string name="subject">Subject:</string>
+    <string name="give_away_hours">Give Away Hours</string>
+    <string name="available_hours">Available Hours</string>
 </resources>

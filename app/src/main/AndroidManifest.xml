@@ -19,6 +19,8 @@
         <activity android:name=".Tasks" />
         <activity android:name=".Hours" />
         <activity android:name=".Notices" android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".SelectedNotice" />
+        <activity android:name=".SendNotice" />
         <activity android:name=".ProductSearch3" />
         <activity android:name=".Products" />
         <activity android:name=".SelectedProduct" />
@@ -26,7 +28,6 @@
         <activity android:name=".SelectHours" />
         <activity android:name=".Profile" />
         <activity android:name=".Settings" />
-        <activity android:name=".SelectedNotice" />
 
         <meta-data
             android:name="com.parse.SERVER_URL"

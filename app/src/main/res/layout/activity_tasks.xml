@@ -28,13 +28,15 @@
 
     <TextView
         android:id="@+id/currentTask"
-        android:layout_width="wrap_content"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/line1"
         android:layout_marginTop="0dp"
         android:paddingVertical="12dp"
         android:paddingStart="4dp"
         android:text=""
+        android:ellipsize="end"
+        android:maxLines="2"
         android:textSize="22sp" />
 
     <Button
@@ -44,7 +46,7 @@
         android:layout_below="@id/line1"
         android:layout_toStartOf="@id/decline"
         android:layout_marginTop="2dp"
-        android:backgroundTint="#558B2F"
+        android:background="@drawable/button_complete"
         android:text="Complete"
         android:textSize="8sp"
         android:textStyle="bold" />
@@ -58,7 +60,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginEnd="4dp"
         android:layout_alignParentEnd="true"
-        android:backgroundTint="#8B0000"
+        android:background="@drawable/button_decline"
         android:text="Decline"
         android:textSize="8sp"
         android:textStyle="bold" />

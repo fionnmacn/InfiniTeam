@@ -69,9 +69,9 @@ public class Products extends AppCompatActivity implements ProductAdapter.Select
                             JSONObject obj = jsArray.getJSONObject(i);
                             String id = obj.getString("id");
                             String name = obj.getString("name");
-                            String description = "holder";
-                            String extra1 = "holder";
-                            String extra2 = "holder";
+                            String description = obj.getString("description");
+                            String extra1 = obj.getString("extra1");
+                            String extra2 = obj.getString("extra2");
                             int price = 0;
                             int stock = 0;
 

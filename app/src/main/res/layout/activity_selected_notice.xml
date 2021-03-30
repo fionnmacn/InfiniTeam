@@ -8,7 +8,7 @@
         android:id="@+id/notice_selected_heading"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="Subject: "
+        android:text="@string/subject"
         android:textSize="32sp"
         android:textStyle="bold"
         android:gravity="center_vertical"
@@ -39,18 +39,16 @@
 
     <Button
         android:id="@+id/archive_button"
-        android:layout_width="224dp"
+        android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginBottom="60dp"
-        android:background="#283593"
-        android:text="Archive"
-        android:textSize="22dp"
+        android:background="@drawable/button_style"
+        android:text="@string/archive"
+        android:textSize="22sp"
         android:textStyle="bold"
-        app:cornerRadius="6dp"
-        android:onClick="openSearch"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:drawableLeft="@drawable/archive02"/>
+        android:drawableLeft="@drawable/archive_2_white_48dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

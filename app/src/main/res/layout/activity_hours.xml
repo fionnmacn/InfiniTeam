@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -29,7 +28,6 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintTop_toBottomOf="@+id/date" />
 
     <TextView
@@ -58,35 +56,30 @@
 
     <Button
         android:id="@+id/hours_button"
-        android:layout_width="224dp"
+        android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginBottom="20dp"
-        android:background="#283593"
-        android:text="Give Away Hours"
-        android:textSize="18sp"
+        android:background="@drawable/button_style"
+        android:text="@string/give_away_hours"
+        android:textSize="16sp"
         android:textStyle="bold"
-        app:cornerRadius="6dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/search_button"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintBottom_toTopOf="@id/search_button" />
 
     <Button
         android:id="@+id/search_button"
-        android:layout_width="224dp"
+        android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginBottom="20dp"
-        android:background="#283593"
-        android:text="Available Hours"
-        android:textSize="18sp"
+        android:background="@drawable/button_style"
+        android:text="@string/available_hours"
+        android:textSize="16sp"
         android:textStyle="bold"
-        app:cornerRadius="6dp"
         android:onClick="openAvailableHours"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/noticesShortcut"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

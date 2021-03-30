@@ -18,6 +18,8 @@
         android:paddingVertical="4dp"
         android:gravity="center_vertical"
         android:textSize="24sp"
+        android:ellipsize="end"
+        android:maxLines="1"
         android:textColor="@color/black" />
 
     <TextView

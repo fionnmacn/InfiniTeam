@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -42,10 +43,16 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.NoticeAdap
         String id = noticeModel.getId();
         String subject = noticeModel.getSubject();
         String content = noticeModel.getContent();
+        boolean priority = noticeModel.isPriority();
 
         holder.tvId.setText(id);
         holder.tvSubject.setText(subject);
         holder.tvContent.setText(content);
+        if (priority) {
+            holder.ivPriority.setVisibility(View.VISIBLE);
+        } else {
+            holder.ivPriority.setVisibility(View.INVISIBLE);
+        }
     }
 
     @Override
@@ -100,12 +107,14 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.NoticeAdap
         TextView tvId;
         TextView tvSubject;
         TextView tvContent;
+        ImageView ivPriority;
 
         public NoticeAdapterVh(@NonNull View itemView) {
             super(itemView);
             tvId = itemView.findViewById(R.id.notice_id);
             tvSubject = itemView.findViewById(R.id.notice_subject);
             tvContent = itemView.findViewById(R.id.notice_content);
+            ivPriority = itemView.findViewById(R.id.notice_priority);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

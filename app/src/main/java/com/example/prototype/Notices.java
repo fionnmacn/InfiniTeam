@@ -65,7 +65,6 @@ public class Notices extends AppCompatActivity implements NoticeAdapter.Selected
         query.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> noticeList, ParseException e) {
                 for (int i = 0; i < noticeList.size(); i++) {
-                    HashMap<String, String> notices = new HashMap<>();
                     ParseObject object = noticeList.get(i);
                     Log.d("OBJECT", object.toString());
 
@@ -75,8 +74,10 @@ public class Notices extends AppCompatActivity implements NoticeAdapter.Selected
                     Log.d("NOTICE", subject);
                     String content = object.getString("content");
                     Log.d("NOTICE", content);
+                    boolean priority = object.getBoolean("priority");
+                    Log.d("NOTICE", String.valueOf(priority));
 
-                    NoticeModel noticeModel = new NoticeModel(id, subject, content);
+                    NoticeModel noticeModel = new NoticeModel(id, subject, content, priority);
                     noticeModelList.add(noticeModel);
                 }
                 callAdapter(noticeModelList);
@@ -86,7 +87,7 @@ public class Notices extends AppCompatActivity implements NoticeAdapter.Selected
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG).show();
+                startActivity(new Intent(Notices.this, SendNotice.class));
             }
         });
     }
@@ -122,7 +123,6 @@ public class Notices extends AppCompatActivity implements NoticeAdapter.Selected
                 return true;
             }
         });
-
         return true;
     }
 

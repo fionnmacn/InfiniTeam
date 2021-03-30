@@ -2,12 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true">
 
     <TextView
         android:id="@+id/product_selected_heading"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.06"
         android:text="Product: "
         android:textSize="32sp"
         android:textStyle="bold"
@@ -17,40 +19,84 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"/>
 
-    <TextView
-        android:id="@+id/product_selected_subject"
+    <ScrollView
+        android:id="@+id/product_selected_scrollview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="32sp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.82"
         app:layout_constraintTop_toBottomOf="@id/product_selected_heading"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"/>
+        app:layout_constraintStart_toStartOf="parent" >
+
+        <LinearLayout
+            android:id="@+id/product_selected_linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/product_selected_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:id="@+id/product_selected_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="32sp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/product_selected_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:id="@+id/product_selected_extra1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:id="@+id/product_selected_extra2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:id="@+id/product_selected_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="10dp" />
+
+        </LinearLayout>
+    </ScrollView>
 
     <TextView
-        android:id="@+id/product_selected_content"
+        android:id="@+id/product_selected_stock"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        app:layout_constraintTop_toBottomOf="@id/product_selected_subject"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="20dp" />
-
-    <Button
-        android:id="@+id/archive_button"
-        android:layout_width="224dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="60dp"
-        android:background="#283593"
-        android:text="Archive"
-        android:textSize="22dp"
-        android:textStyle="bold"
-        app:cornerRadius="6dp"
-        android:onClick="openSearch"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:drawableLeft="@drawable/archive02"/>
+        android:textSize="24sp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_vertical"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
