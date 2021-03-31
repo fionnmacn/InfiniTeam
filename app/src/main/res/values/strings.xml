@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Prototype</string>
+    <string name="app_name">InfiniTeam</string>
 
     <string name="back4app_server_url">https://parseapi.back4app.com/</string>
 
@@ -12,9 +12,9 @@
     <string name="available_tasks_header">Available Tasks</string>
     <string name="date">Date</string>
     <string name="hours">Hours:</string>
-    <string name="notices"><u>Notices</u></string>
-    <string name="rota"><u>Rota</u></string>
-    <string name="tasks"><u>Tasks</u></string>
+    <string name="notices">Notices</string>
+    <string name="rota">Rota</string>
+    <string name="tasks">Tasks</string>
     <string name="create_notice">Create notice</string>
     <string name="notices_header">Notices</string>
     <string name="notices_alert_priority_desc">Icon to alert user to high priority notice</string>
@@ -40,4 +40,5 @@
     <string name="priority_task">Priority Task?</string>
     <string name="task_description">Task Description:</string>
     <string name="create">Create</string>
+    <string name="product_image">Product image</string>
 </resources>

@@ -6,7 +6,7 @@ android {
     compileSdkVersion 29
 
     defaultConfig {
-        applicationId "com.example.prototype"
+        applicationId "com.example.InfiniTeam"
         minSdkVersion 28
         targetSdkVersion 29
         versionCode 1

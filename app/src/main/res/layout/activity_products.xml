@@ -2,7 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:background="#DCDCDC">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/product_toolbar"
@@ -13,6 +15,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Products"
+            android:textColor="@color/black"
+            android:layout_marginStart="40dp"
             android:textSize="32sp"
             android:textStyle="bold"
             android:gravity="center" />
@@ -21,9 +25,11 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/product_recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.92"
         app:layout_constraintTop_toBottomOf="@id/product_toolbar"
         android:layout_marginTop="4dp"
-        android:layout_marginStart="4dp" />
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

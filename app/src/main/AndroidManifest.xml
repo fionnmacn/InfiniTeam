@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.prototype">
+    package="com.example.InfiniTeam">
 
     <application
         android:allowBackup="true"
@@ -9,27 +9,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Prototype">
-        <activity android:name=".Login">
+        <activity android:name="com.example.InfiniTeam.Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Home" />
-        <activity android:name=".Tasks" />
-        <activity android:name=".CreateTask" />
-        <activity android:name=".Hours" />
-        <activity android:name=".Notices" android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".SelectedNotice" />
-        <activity android:name=".SendNotice" />
-        <activity android:name=".ProductSearch3" />
-        <activity android:name=".Products" />
-        <activity android:name=".SelectedProduct" />
-        <activity android:name=".AvailableHours" />
-        <activity android:name=".SelectHours" />
-        <activity android:name=".Profile" />
-        <activity android:name=".ChangePassword" />
-        <activity android:name=".Settings" />
+        <activity android:name="com.example.InfiniTeam.Home" />
+        <activity android:name="com.example.InfiniTeam.Tasks" />
+        <activity android:name="com.example.InfiniTeam.CreateTask" />
+        <activity android:name="com.example.InfiniTeam.Hours" />
+        <activity android:name="com.example.InfiniTeam.Notices" />
+        <activity android:name="com.example.InfiniTeam.SelectedNotice" />
+        <activity android:name="com.example.InfiniTeam.SendNotice" />
+        <activity android:name="com.example.InfiniTeam.ProductSearch3" />
+        <activity android:name="com.example.InfiniTeam.Products" />
+        <activity android:name="com.example.InfiniTeam.SelectedProduct" />
+        <activity android:name="com.example.InfiniTeam.Stock" />
+        <activity android:name="com.example.InfiniTeam.AvailableHours" />
+        <activity android:name="com.example.InfiniTeam.SelectHours" />
+        <activity android:name="com.example.InfiniTeam.Profile" />
+        <activity android:name="com.example.InfiniTeam.ChangePassword" />
+        <activity android:name="com.example.InfiniTeam.Settings" />
 
         <meta-data
             android:name="com.parse.SERVER_URL"

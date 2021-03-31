@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="#D3D3D3">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/profileButton"
@@ -27,7 +28,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:adjustViewBounds="true"
-        android:background="#FFFFFF"
+        android:background="#D3D3D3"
         android:paddingHorizontal="4dp"
         android:paddingVertical="4dp"
         android:scaleType="fitCenter"
@@ -36,44 +37,71 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/settings01" />
 
-    <TextView
-        android:id="@+id/tasksShortcut"
-        android:layout_width="320dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="128dp"
-        android:onClick="openTasks"
-        android:text="@string/tasks"
-        android:textSize="42sp"
-        android:textStyle="bold"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/tasksShortcutParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileButton" />
+        app:layout_constraintBottom_toTopOf="@id/breaksShortcutParent"
+        android:layout_margin="8dp"
+        app:cardElevation="4dp">
 
-    <TextView
-        android:id="@+id/breaksShortcut"
-        android:layout_width="320dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="42dp"
-        android:onClick="openBreaks"
-        android:text="@string/rota"
-        android:textSize="42sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tasksShortcut" />
+        <TextView
+            android:id="@+id/tasksShortcut"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:onClick="openTasks"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:text="@string/tasks"
+            android:textSize="48sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/noticesShortcut"
-        android:layout_width="320dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="42dp"
-        android:onClick="openNotices"
-        android:text="@string/notices"
-        android:textSize="42sp"
-        android:textStyle="bold"
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/breaksShortcutParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/breaksShortcut" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="8dp"
+        app:cardElevation="4dp">
+
+        <TextView
+            android:id="@+id/breaksShortcut"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:onClick="openBreaks"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="@string/rota"
+            android:textSize="48sp"
+            android:textStyle="bold" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/breaksShortcutParent"
+        android:layout_margin="8dp"
+        app:cardElevation="4dp">
+
+        <TextView
+            android:id="@+id/noticesShortcut"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:onClick="openNotices"
+            android:text="@string/notices"
+            android:textSize="48sp"
+            android:textStyle="bold" />
+
+    </com.google.android.material.card.MaterialCardView>
 
     <Button
         android:id="@+id/search_button"
