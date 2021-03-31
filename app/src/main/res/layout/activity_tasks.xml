@@ -35,24 +35,25 @@
         android:paddingVertical="12dp"
         android:paddingStart="4dp"
         android:text=""
+        android:textColor="@color/black"
         android:ellipsize="end"
         android:maxLines="2"
         android:textSize="22sp" />
 
     <Button
-        android:id="@+id/complete"
+        android:id="@+id/task_complete"
         android:layout_width="80dp"
         android:layout_height="50dp"
         android:layout_below="@id/line1"
-        android:layout_toStartOf="@id/decline"
+        android:layout_toStartOf="@id/task_decline"
         android:layout_marginTop="2dp"
-        android:background="@drawable/button_complete"
-        android:text="Complete"
+        android:background="@drawable/button_style"
+        android:text="@string/complete"
         android:textSize="8sp"
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/decline"
+        android:id="@+id/task_decline"
         android:layout_width="80dp"
         android:layout_height="50dp"
         android:layout_below="@id/line1"
@@ -60,8 +61,8 @@
         android:layout_marginStart="4dp"
         android:layout_marginEnd="4dp"
         android:layout_alignParentEnd="true"
-        android:background="@drawable/button_decline"
-        android:text="Decline"
+        android:background="@drawable/button_style"
+        android:text="@string/decline"
         android:textSize="8sp"
         android:textStyle="bold" />
 
@@ -96,12 +97,27 @@
         android:layout_below="@id/taskListHeader"
         android:background="@color/black" />
 
-    <ListView
-        android:id="@+id/list"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/task_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/taskListHeader"
+        android:layout_alignParentBottom="true"
+        android:paddingVertical="4dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/task_create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="40dp"
+        android:src="@drawable/baseline_add_black_48dp"
+        android:contentDescription="@string/create_task"
+        android:background="@color/white"
+        android:backgroundTint="#283593"
+        android:elevation="4dp"
         android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

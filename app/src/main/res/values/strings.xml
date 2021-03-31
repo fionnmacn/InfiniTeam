@@ -28,4 +28,16 @@
     <string name="subject">Subject:</string>
     <string name="give_away_hours">Give Away Hours</string>
     <string name="available_hours">Available Hours</string>
+    <string name="change_password">Change Password</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="company_logo">Company logo</string>
+    <string name="create_task">Create task</string>
+    <string name="decline">Decline</string>
+    <string name="complete">Complete</string>
+    <string name="accept">Accept</string>
+    <string name="task">Task:</string>
+    <string name="priority_task">Priority Task?</string>
+    <string name="task_description">Task Description:</string>
+    <string name="create">Create</string>
 </resources>

@@ -1,9 +1,11 @@
 package com.example.prototype;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,9 +17,19 @@ import com.google.android.material.shape.CornerFamily;
 import com.parse.GetDataCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
+import com.parse.ParseObject;
 import com.parse.ParseUser;
 
 public class Profile extends AppCompatActivity {
+
+    String user = null;
+
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+//    {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        user = data.getStringExtra("username");
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,5 +68,14 @@ public class Profile extends AppCompatActivity {
         name.setText(currentName);
         String currentEmail = currentUser.getEmail();
         email.setText(currentEmail);
+
+        change_password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Profile.this, ChangePassword.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 }

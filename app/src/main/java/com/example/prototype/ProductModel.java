@@ -12,6 +12,16 @@ public class ProductModel  implements Serializable {
     private int price;
     private int stock;
 
+    public ProductModel(String id, String name, String description, String extra1, String extra2, int price, int stock) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.extra1 = extra1;
+        this.extra2 = extra2;
+        this.price = price;
+        this.stock = stock;
+    }
+
     public String getId() {
         return id;
     }
@@ -65,16 +75,6 @@ public class ProductModel  implements Serializable {
     }
 
     public void setStock(int stock) {
-        this.stock = stock;
-    }
-
-    public ProductModel(String id, String name, String description, String extra1, String extra2, int price, int stock) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.extra1 = extra1;
-        this.extra2 = extra2;
-        this.price = price;
         this.stock = stock;
     }
 }
