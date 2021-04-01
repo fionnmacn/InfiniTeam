@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D3D3D3">
+    android:background="@drawable/gradient">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/profileButton"
@@ -28,7 +28,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:adjustViewBounds="true"
-        android:background="#D3D3D3"
+        android:background="#00FFFFFF"
         android:paddingHorizontal="4dp"
         android:paddingVertical="4dp"
         android:scaleType="fitCenter"
@@ -43,8 +43,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/breaksShortcutParent"
-        android:layout_margin="8dp"
-        app:cardElevation="4dp">
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="35dp"
+        app:cardElevation="8dp">
 
         <TextView
             android:id="@+id/tasksShortcut"
@@ -66,8 +68,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_margin="8dp"
-        app:cardElevation="4dp">
+        android:layout_margin="35dp"
+        app:cardElevation="8dp">
 
         <TextView
             android:id="@+id/breaksShortcut"
@@ -87,8 +89,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/breaksShortcutParent"
-        android:layout_margin="8dp"
-        app:cardElevation="4dp">
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginTop="35dp"
+        app:cardElevation="8dp">
 
         <TextView
             android:id="@+id/noticesShortcut"

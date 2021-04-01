@@ -1,6 +1,7 @@
 package com.example.InfiniTeam;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -115,7 +116,6 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskAdapterVh>
         TextView tvDescription;
         TextView tvCreatedAt;
         ImageView ivPriority;
-        Button accept;
 
         public TaskAdapterVh(@NonNull View itemView) {
             super(itemView);

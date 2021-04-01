@@ -42,11 +42,13 @@
 
     <ImageButton
         android:id="@+id/task_accept"
-        android:layout_width="70dp"
-        android:layout_height="60dp"
+        android:layout_width="55dp"
+        android:layout_height="45dp"
         android:src="@drawable/add_task_white_48dp"
-        android:background="@drawable/button_style"
         app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/black"
+        android:padding="30dp"
+        android:background="@drawable/button_style"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="4dp"

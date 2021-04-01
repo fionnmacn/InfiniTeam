@@ -1,5 +1,6 @@
 package com.example.InfiniTeam;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,11 +17,13 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.TimeZone;
 
 public class AvailableHours extends AppCompatActivity {
 
@@ -30,9 +33,13 @@ public class AvailableHours extends AppCompatActivity {
         setContentView(R.layout.activity_available_hours);
         ListView listview = findViewById(R.id.list);
 
+        Date currentDate = new Date();
+        Log.d("CURRENT_TIME", String.valueOf(currentDate));
+
         ArrayList<HashMap<String, String>> hoursList = new ArrayList<>();
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Shifts");
         query.whereEqualTo("giveaway", true);
+        query.whereGreaterThanOrEqualTo("start", currentDate);
         query.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> availableList, ParseException e) {
                 for (int i = 0; i < availableList.size(); i++) {

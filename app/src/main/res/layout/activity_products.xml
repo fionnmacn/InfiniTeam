@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fitsSystemWindows="true"
-    android:background="#DCDCDC">
+    android:background="@drawable/gradient">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/product_toolbar"
@@ -15,9 +15,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Products"
-            android:textColor="@color/black"
-            android:layout_marginStart="40dp"
-            android:textSize="32sp"
+            android:textColor="@color/white"
+            android:layout_marginStart="35dp"
+            android:textSize="34sp"
             android:textStyle="bold"
             android:gravity="center" />
     </androidx.appcompat.widget.Toolbar>

@@ -2,57 +2,74 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient">
 
-    <TextView
-        android:id="@+id/date"
-        android:layout_width="320dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="60dp"
-        android:gravity="center"
-        android:text="@string/date"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/hours"
-        android:layout_width="160dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="20dp"
-        android:gravity="center"
-        android:text=""
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date" />
-
-    <TextView
-        android:id="@+id/hoursTitle"
-        android:layout_width="160dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginStart="20dp"
-        android:gravity="center"
-        android:text="@string/hours"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date"
-        app:layout_constraintStart_toEndOf="@+id/hours"/>
-
-    <CalendarView
-        android:id="@+id/calendar"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/hours_card"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hours" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        app:cardElevation="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="320dp"
+                android:layout_height="64dp"
+                android:gravity="center"
+                android:text="@string/date"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/hours"
+                android:layout_width="160dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center"
+                android:text=""
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/date" />
+
+            <TextView
+                android:id="@+id/hoursTitle"
+                android:layout_width="160dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="20dp"
+                android:gravity="center"
+                android:text="@string/hours"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/date"
+                app:layout_constraintStart_toEndOf="@+id/hours"/>
+
+            <CalendarView
+                android:id="@+id/calendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hours" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
 
     <Button
         android:id="@+id/hours_button"
@@ -72,7 +89,7 @@
         android:id="@+id/search_button"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/button_style"
         android:text="@string/available_hours"
         android:textSize="16sp"
