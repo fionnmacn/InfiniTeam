@@ -44,7 +44,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductA
     public ProductAdapter(List<ProductModel> productModelList, SelectedProduct selectedProduct) {
         this.productModelList = productModelList;
         this.getProductModelListFiltered = productModelList;
-        this. selectedProduct = selectedProduct;
+        this.selectedProduct = selectedProduct;
     }
 
     @NonNull

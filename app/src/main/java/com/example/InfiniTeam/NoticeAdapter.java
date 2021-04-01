@@ -25,7 +25,7 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.NoticeAdap
     public NoticeAdapter(List<NoticeModel> noticeModelList, SelectedNotice selectedNotice) {
         this.noticeModelList = noticeModelList;
         this.getNoticeModelListFiltered = noticeModelList;
-        this. selectedNotice = selectedNotice;
+        this.selectedNotice = selectedNotice;
     }
 
     @NonNull

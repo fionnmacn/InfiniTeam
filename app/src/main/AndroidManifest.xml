@@ -26,6 +26,7 @@
         <activity android:name="com.example.InfiniTeam.Products" />
         <activity android:name="com.example.InfiniTeam.SelectedProduct" />
         <activity android:name="com.example.InfiniTeam.Stock" />
+        <activity android:name="com.example.InfiniTeam.SelectedStore" />
         <activity android:name="com.example.InfiniTeam.AvailableHours" />
         <activity android:name="com.example.InfiniTeam.SelectHours" />
         <activity android:name="com.example.InfiniTeam.Profile" />
