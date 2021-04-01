@@ -1,0 +1,312 @@
+{
+  "products": [
+    {
+      "id": "p13928d1",
+      "name": "Porta 6",
+      "description": "The grapes for Porta 6 are grown in the vineyards around Lisbon where red grapes thrive, the winemaking team at the family owned Vidigal Wines led by António Mendes work with traditional Portuguese varieties to make this modern style blend which is popular with customers and staff alike. Porta 6 is smooth and balanced with red and wild berry notes and some savoury complexity and a refreshing, bright, fruit-filled palate.",
+      "price": 10,
+      "category": "Red Wine",
+      "country": "Portugal",
+      "grapes": [
+        "Aragones",
+        "Castelão",
+        "Touriga Nacional"
+      ],
+      "match": "Savoury",
+      "image": "https://i.imgur.com/Wu8F1Mw.png",
+      "abv": 13.5,
+      "stock": [
+        {"Navan Road": 16},
+        {"Glasnevin": 22},
+        {"Citywest": 7},
+        {"Beacon": 18},
+        {"Tallaght": 2},
+        {"Limerick City": 28},
+        {"Bray": 4},
+        {"Howth": 30},
+        {"Kildare Village": 7},
+        {"Tralee": 16},
+        {"Cork North": 11}
+      ]
+    },
+    {
+      "id": "i9376j8",
+      "name": "Rinforzo",
+      "description": "The grapes for Rinforzo grow in vineyards located in the hills surrounding Manduria, deep in the heel of Italy's Puglia region. After harvest they are carefully air dried for four weeks to concentrate their aromas and flavour intensity. This results in rich, full, dark chocolate and Mediterranean herb flavours, Rinforzo wine strikes a perfect balance between an opulent mouthfeel and silky elegance.",
+      "price": 20.95,
+      "category": "Red Wine",
+      "country": "Italy",
+      "grapes": [
+        "Primitivo"
+      ],
+      "match": "Salty",
+      "image": "https://i.imgur.com/YFUsK09.png",
+      "abv": 14.5,
+      "stock": [
+        {"Navan Road": 1},
+        {"Glasnevin": 1},
+        {"Citywest": 1},
+        {"Beacon": 1},
+        {"Tallaght": 1},
+        {"Limerick City": 1},
+        {"Bray": 1},
+        {"Howth": 1},
+        {"Kildare Village": 1},
+        {"Tralee": 1},
+        {"Cork North": 1}
+      ]
+    },
+    {
+      "id": "f83651h7",
+      "name": "Châtelain Desjacques Sauvignon Blanc",
+      "description": "This elegant Sauvignon Blanc is made by the highly regarded fully certified sustainable grower co-operative, Cave de La Loire. Their vineyards, located in the Loire Valley are close to Angers, and the climate is influenced by the cooling effect of the valley’s river and its tributaries. The resultant wine is a refreshing aromatic example of a restrained Sauvignon Blanc grown in a cooler climate location. A refreshing Loire Sauvignon Blanc bursting with zesty lemon and lime citrus notes and a gooseberry undertone on the nose, dry on the palate with crisp acidity and a tangy finish.",
+      "price": 14.95,
+      "category": "White Wine",
+      "country": "France",
+      "grapes": [
+        "Sauvignon Blanc"
+      ],
+      "match": "Savoury",
+      "image": "https://i.imgur.com/Y9j2fx9.png",
+      "abv": 12,
+      "stock": [
+        {"Navan Road": 2},
+        {"Glasnevin": 2},
+        {"Citywest": 2},
+        {"Beacon": 2},
+        {"Tallaght": 2},
+        {"Limerick City": 2},
+        {"Bray": 2},
+        {"Howth": 2},
+        {"Kildare Village": 2},
+        {"Tralee": 2},
+        {"Cork North": 2}
+      ]
+    },
+    {
+        "id": "z1306j6",
+        "name": "Insight Vineyard Sauvignon Blanc",
+        "description": "Crafted by Eveline Fraser (ex-Cloudy Bay winemaker) from a single-vineyard site in the cooler Southern Valleys region of Marlborough, this wine displays all the characteristics that have made Marlborough Sauvignon Blanc world famous. Fresh basil, capsicum and tomato leaf aromas followed by zesty red, grapefruit acidity and passionfruit on the crisp palate. An intense and complex wine from a small, quality-obsessed producer.",
+        "price": 12.95,
+        "category": "White Wine",
+        "country": "New Zealand",
+        "grapes": [
+          "Sauvignon Blanc"
+        ],
+        "match": "Savoury",
+        "image": "https://i.imgur.com/DfKdwa5.png",
+        "abv": 13.5,
+        "stock": [
+          {"Navan Road": 3},
+          {"Glasnevin": 3},
+          {"Citywest": 3},
+          {"Beacon": 3},
+          {"Tallaght": 3},
+          {"Limerick City": 3},
+          {"Bray": 3},
+          {"Howth": 3},
+          {"Kildare Village": 3},
+          {"Tralee": 3},
+          {"Cork North": 3}
+        ]
+      },
+      {
+        "id": "z0982g6",
+        "name": "Dashwood Sauvignon Blanc",
+        "description": "Dashwood is an innovative, modern family-owned winery. The fruit for their Sauvignon Blanc comes from the family's vineyard, holdings across Marlborough, combining the clean fruit characters of the Wairau Valley with the flinty, mineral characters, of the Awatere Valley. The nose is aromatic and fresh whilst the palate is expressive with stone fruit, citrus and fresh, tropical flavours that linger on through the crisp finish.",
+        "price": 12.95,
+        "category": "White Wine",
+        "country": "New Zealand",
+        "grapes": [
+          "Sauvignon Blanc"
+        ],
+        "match": "Savoury",
+        "image": "https://i.imgur.com/6KzVgLQ.png",
+        "abv": 13,
+        "stock": [
+          {"Navan Road": 16},
+          {"Glasnevin": 22},
+          {"Citywest": 7},
+          {"Beacon": 18},
+          {"Tallaght": 2},
+          {"Limerick City": 28},
+          {"Bray": 4},
+          {"Howth": 30},
+          {"Kildare Village": 7},
+          {"Tralee": 16},
+          {"Cork North": 11}
+        ]
+      },
+      {
+        "id": "z3722j9",
+        "name": "Mt Difficulty Roaring Meg Pinot Noir",
+        "description": "Established in 1992 at the base of the mountain for which the winery is named, Mt Difficulty was amongst the first estates to plant vines in Central Otago. The grapes for this wine come from the estate's sustainably managed vineyards. The cool climate Pinot Noir offers red cherry and wild raspberry fruit with a subtle sweet spice and toasty complexity from 10 months ageing in oak barrels.",
+        "price": 22.95,
+        "category": "Red Wine",
+        "country": "New Zealand",
+        "grapes": [
+          "Pinot Noir"
+        ],
+        "match": "Savoury",
+        "image": "https://i.imgur.com/PAGYlUn.png",
+        "abv": 14,
+        "stock": [
+          {"Navan Road": 16},
+          {"Glasnevin": 22},
+          {"Citywest": 7},
+          {"Beacon": 18},
+          {"Tallaght": 2},
+          {"Limerick City": 28},
+          {"Bray": 4},
+          {"Howth": 30},
+          {"Kildare Village": 7},
+          {"Tralee": 16},
+          {"Cork North": 11}
+        ]
+      },
+      {
+        "id": "f1262k1",
+        "name": "Domaine L'Ostal Cazes Estibals",
+        "description": "This is a serious Reserve wine from the JM Cazes family, who also own the prestigious Château Lynch-Bages estate in Bordeaux. Coming from the heart of Minervois in the Languedoc, it is richly textured with a wealth of bramble fruit and sweet spice from ageing in high-grade French oak. The finish is dry with good tannins and that characteristic garrigue herbal note that defines the best Minervois wines.",
+        "price": 13.95,
+        "category": "Red Wine",
+        "country": "France",
+        "grapes": [
+          "Carignan", 
+          "Grenache", 
+          "Mourvèdre / Monastrell", 
+          "Shiraz / Syrah"
+        ],
+        "match": "Savoury",
+        "image": "https://i.imgur.com/bmHKawY.png",
+        "abv": 15,
+        "stock": [
+          {"Navan Road": 16},
+          {"Glasnevin": 22},
+          {"Citywest": 7},
+          {"Beacon": 18},
+          {"Tallaght": 2},
+          {"Limerick City": 28},
+          {"Bray": 4},
+          {"Howth": 30},
+          {"Kildare Village": 7},
+          {"Tralee": 16},
+          {"Cork North": 11}
+        ]
+      },
+      {
+        "id": "f5522j3",
+        "name": "Château de Fleuries",
+        "description": "Château de Fleurie is recognised as one of the region's top estates, it stands in the village of Fleurie in the heart of the Crus Beaujolais region. The current family have owned the property since the beginning of the 20th century. Château de Fleurie is intense and complex on the nose, the mouth reveals succulent aromas of blackcurrants and blackberries, complemented by liquorice and chocolate notes.",
+        "price": 15.95,
+        "category": "White Wine",
+        "country": "France",
+        "grapes": [
+          "Gamay"
+        ],
+        "match": "Acidic",
+        "image": "https://i.imgur.com/3dsXqde.png",
+        "abv": 13.5,
+        "stock": [
+          {"Navan Road": 16},
+          {"Glasnevin": 22},
+          {"Citywest": 7},
+          {"Beacon": 18},
+          {"Tallaght": 2},
+          {"Limerick City": 28},
+          {"Bray": 4},
+          {"Howth": 30},
+          {"Kildare Village": 7},
+          {"Tralee": 16},
+          {"Cork North": 11}
+        ]
+      },
+      {
+        "id": "s1901y6",
+        "name": "Moët & Chandon Brut Impérial NV",
+        "description": "Created in 1869 Moët Impérial is Moët Champagnes iconic house champagne. A blend of Pinot Noir, Pinot Meunier and Chardonnay, it shows a vibrant intensity of green apple and citrus fruit with white flowers and blond notes of brioche, cereal and fresh nuts.",
+        "price": 55,
+        "category": "White Wine",
+        "country": "France",
+        "grapes": [
+          "Pinot Noir",
+          "Pinot Meunier",
+          "Chardonnay"
+        ],
+        "match": "Savoury",
+        "image": "https://i.imgur.com/Wc5ht1O.png",
+        "abv": 12,
+        "stock": [
+          {"Navan Road": 16},
+          {"Glasnevin": 22},
+          {"Citywest": 7},
+          {"Beacon": 18},
+          {"Tallaght": 2},
+          {"Limerick City": 28},
+          {"Bray": 4},
+          {"Howth": 30},
+          {"Kildare Village": 7},
+          {"Tralee": 16},
+          {"Cork North": 11}
+        ]
+      },
+      {
+        "id": "s0912r4",
+        "name": "Meerlust Rubicon",
+        "description": "An iconic Cape wine. Classic Rubicon nose of violets, ripe plum, cedar wood and spiciness and starting to develop typical liquorice notes from bottle development. The palate is full bodied, structured by beautifully sleek, ripe tannins which restrain the vibrant dark fruit typical of this vintage, giving the wine an opulent texture which is kept focused by the delightful acidity. The wine lingers on the palate with creamy fruit mouth-fiilling tannins.",
+        "price": 42,
+        "category": "Red Wine",
+        "country": "South Africa",
+        "grapes": [
+          "Cabernet Franc", 
+          "Cabernet Sauvignon", 
+          "Merlot", 
+          "Petit Verdot"
+        ],
+        "match": "Savoury",
+        "image": "https://i.imgur.com/vMtYxaa.png",
+        "abv": 14,
+        "stock": [
+          {"Navan Road": 16},
+          {"Glasnevin": 22},
+          {"Citywest": 7},
+          {"Beacon": 18},
+          {"Tallaght": 2},
+          {"Limerick City": 28},
+          {"Bray": 4},
+          {"Howth": 30},
+          {"Kildare Village": 7},
+          {"Tralee": 16},
+          {"Cork North": 11}
+        ]
+      },
+      {
+        "id": "a6228r3",
+        "name": "Bodegas Caro Amancaya",
+        "description": "What happens when Argentina's finest wine producer, Nicolas Catena, and Bordeaux's legendary Domaine Barons de Rothschild Lafite collaborate on a wine project in Mendoza? We get some of the greatest Argentinian wines we have tasted. Amancaya is the native Indian word for a flower found high in the Andes mountains and is a fitting name for this floral and elegant wine. The fruit intensity of the traditional Malbec grape is masterfully blended with Cabernet Sauvignon and then aged 12 months in old oak barrels to give a silky European elegance. With expressive notes of red fruit, coffee and black pepper this is a complex and beautifully balanced wine.",
+        "price": 21,
+        "category": "Red Wine",
+        "country": "Argentina",
+        "grapes": [
+          "Cabernet Sauvignon", 
+          "Malbec"
+        ],
+        "match": "Umami",
+        "image": "https://i.imgur.com/rtnB88L.png",
+        "abv": 14.5,
+        "stock": [
+          {"Navan Road": 16},
+          {"Glasnevin": 22},
+          {"Citywest": 7},
+          {"Beacon": 18},
+          {"Tallaght": 2},
+          {"Limerick City": 28},
+          {"Bray": 4},
+          {"Howth": 30},
+          {"Kildare Village": 7},
+          {"Tralee": 16},
+          {"Cork North": 11}
+        ]
+      }
+  ]
+}
