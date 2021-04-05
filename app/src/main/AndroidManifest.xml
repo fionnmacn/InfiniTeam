@@ -18,6 +18,7 @@
         <activity android:name="com.example.InfiniTeam.activities.Home" />
         <activity android:name="com.example.InfiniTeam.activities.Tasks" />
         <activity android:name="com.example.InfiniTeam.activities.CreateTask" />
+        <activity android:name="com.example.InfiniTeam.activities.SelectedTask" />
         <activity android:name="com.example.InfiniTeam.activities.Hours" />
         <activity android:name="com.example.InfiniTeam.activities.Notices" />
         <activity android:name="com.example.InfiniTeam.activities.SelectedNotice" />

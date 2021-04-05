@@ -205,6 +205,7 @@ public class Tasks extends AppCompatActivity implements TaskAdapter.SelectedTask
     public void selectedTask(TaskModel taskModel) {
         startActivity(new Intent(Tasks.this, SelectedTask.class)
                 .putExtra("data", taskModel));
+        finish();
     }
 
     public void callAdapter(List<TaskModel> taskModelList) {

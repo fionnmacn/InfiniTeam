@@ -49,6 +49,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:drawableLeft="@drawable/archive_2_white_48dp"/>
+        android:drawableLeft="@drawable/add_task_white_48dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

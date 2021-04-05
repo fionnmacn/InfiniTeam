@@ -150,12 +150,12 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskAdapterVh>
                 }
             });
 
-//            itemView.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    selectedTask.selectedTask(taskModelList.get(getAdapterPosition()));
-//                }
-//            });
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    selectedTask.selectedTask(taskModelList.get(getAdapterPosition()));
+                }
+            });
         }
     }
 }

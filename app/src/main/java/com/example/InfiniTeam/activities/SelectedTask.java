@@ -39,7 +39,7 @@ public class SelectedTask extends AppCompatActivity {
 
             id = taskModel.getId();
             description.setText(taskModel.getDescription());
-            createdAt.setText((CharSequence) taskModel.getCreatedAt());
+            createdAt.setText(taskModel.getCreatedAt());
         }
 
         accept.setOnClickListener(new View.OnClickListener() {
@@ -51,10 +51,11 @@ public class SelectedTask extends AppCompatActivity {
                 query.getInBackground(id, new GetCallback<ParseObject>() {
                     public void done(ParseObject task, ParseException e) {
                         if (e == null) {
-                            task.add("assignedTo", username);
+                            task.put("assignedTo", username);
                             task.saveInBackground();
                             Snackbar.make(v, "Task accepted.", Snackbar.LENGTH_LONG).show();
-                            SelectedTask.this.finish();
+                            startActivity(new Intent(SelectedTask.this, Home.class));
+                            finish();
                         }
                         else {
                             Snackbar.make(v, e.getMessage(), Snackbar.LENGTH_LONG).show();
