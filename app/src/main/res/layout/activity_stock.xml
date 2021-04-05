@@ -13,6 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Stock"
+            android:paddingStart="15dp"
             android:textSize="32sp"
             android:textStyle="bold"
             android:gravity="center" />
@@ -38,7 +39,7 @@
         android:src="@drawable/baseline_add_black_48dp"
         android:contentDescription="@string/create_notice"
         android:background="@color/white"
-        android:backgroundTint="#283593"
+        android:backgroundTint="#1E90FF"
         android:elevation="4dp"/>
 
 

@@ -40,7 +40,7 @@
         android:textColor="@color/black"
         android:ellipsize="end"
         android:maxLines="2"
-        android:textSize="22sp" />
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/task_complete"

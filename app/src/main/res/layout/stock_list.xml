@@ -12,6 +12,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:gravity="center_vertical"
+        android:paddingStart="4dp"
         android:textSize="24sp"
         android:maxLines="1"
         android:ellipsize="end"
