@@ -111,7 +111,11 @@ public class Stock extends AppCompatActivity implements StockAdapter.SelectedSto
 
     @Override
     public void selectedStore(StockModel stockModel) {
-        startActivity(new Intent(Stock.this, SelectedStore.class).putExtra("data", stockModel));
+        Intent intent = new Intent(Stock.this, SelectedStore.class);
+        intent.putExtra("stockModel", stockModel);
+        intent.putExtra("id", productId);
+        startActivity(intent);
+        finish();
     }
 
     public void callAdapter(List<StockModel> stockModelList) {

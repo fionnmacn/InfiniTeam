@@ -9,11 +9,11 @@ public class ProductModel  implements Serializable {
     private String description;
     private String extra1;
     private String extra2;
-    private int price;
+    private float price;
     private int stock;
     private String image;
 
-    public ProductModel(String id, String name, String description, String extra1, String extra2, int price, int stock, String image) {
+    public ProductModel(String id, String name, String description, String extra1, String extra2, float price, int stock, String image) {
         this.id = id;
         this.name = name;
         this.description = description;

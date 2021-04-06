@@ -48,8 +48,8 @@ public class SelectedProduct extends AppCompatActivity {
             description.setText(productModel.getDescription());
             extra1.setText(productModel.getExtra1());
             extra2.setText(productModel.getExtra2());
-            price.setText("12.95");
-            stock.setText("16");
+            price.setText(String.valueOf(productModel.getPrice()));
+            stock.setText(String.valueOf(productModel.getStock()));
 
 
 //            price.setText((int) productModel.getPrice());

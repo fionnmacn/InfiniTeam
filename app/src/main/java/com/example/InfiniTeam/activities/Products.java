@@ -1,6 +1,7 @@
 package com.example.InfiniTeam.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -30,11 +31,12 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Products extends AppCompatActivity implements ProductAdapter.SelectedProduct{
+
     Toolbar toolbar;
     RecyclerView recyclerView;
-
     List<ProductModel> productModelList = new ArrayList<>();
     ProductAdapter productAdapter;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,9 @@ public class Products extends AppCompatActivity implements ProductAdapter.Select
         toolbar = findViewById(R.id.product_toolbar);
         this.setSupportActionBar(toolbar);
         this.getSupportActionBar().setTitle("");
+        sharedPreferences = getSharedPreferences("InfiniTeam", MODE_PRIVATE);
+        String current_store = sharedPreferences.getString("current_store", "Navan Road");
+        String store_pos = sharedPreferences.getString("store_pos", "0");
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
@@ -52,6 +57,8 @@ public class Products extends AppCompatActivity implements ProductAdapter.Select
 //        String currentUser = user.getUsername();
 
         HashMap<String, String> params = new HashMap<>();
+        params.put("current_store", current_store);
+        params.put("store_pos", store_pos);
         ParseCloud.callFunctionInBackground("products", params, new FunctionCallback<ArrayList>() {
             public void done(ArrayList response, ParseException e) {
                 if (e == null) {
@@ -66,8 +73,8 @@ public class Products extends AppCompatActivity implements ProductAdapter.Select
                             String description = obj.getString("description");
                             String extra1 = obj.getString("extra1");
                             String extra2 = obj.getString("extra2");
-                            int price = 0;
-                            int stock = 0;
+                            float price = Float.parseFloat(obj.getString("price"));
+                            int stock = Integer.parseInt(obj.getString("stock"));
                             String image = obj.getString("image");
 
                             ProductModel productModel = new ProductModel(id, name, description, extra1, extra2, price, stock, image);
