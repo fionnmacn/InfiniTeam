@@ -5,7 +5,7 @@ Final Year Project app
 The latest .apk is included in the assests section of each release. It is also available in the root of the directory.
 
 ## User credentials
-To log into the app, use: {fionn: fionn} for a user with elevated privileges, and {johnmc165: fionn} for a user without.
+To log into the app, use {johnmc165: fionn} for a user with no create privileges. Message for login details for a user with elevated privileges.
 
 ## Pitch
 With retail and other customer facing SMEs coming under more pressure than ever to compete with large online businesses, the need for greater efficiencies in their brick and mortar premises is paramount. 
