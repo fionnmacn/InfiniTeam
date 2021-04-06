@@ -13,7 +13,7 @@
         "Touriga Nacional"
       ],
       "match": "Savoury",
-      "image": "https://i.imgur.com/Wu8F1Mw.png",
+      "image": "https://res.cloudinary.com/infiniteam/image/upload/v1617411892/p13928d1_r7nl9x.png",
       "abv": 13.5,
       "stock": [
         {"Navan Road": 16},
@@ -40,7 +40,7 @@
         "Primitivo"
       ],
       "match": "Salty",
-      "image": "https://i.imgur.com/YFUsK09.png",
+      "image": "https://res.cloudinary.com/infiniteam/image/upload/v1617411892/i9376j8_clhk0f.png",
       "abv": 14.5,
       "stock": [
         {"Navan Road": 1},
@@ -67,7 +67,7 @@
         "Sauvignon Blanc"
       ],
       "match": "Savoury",
-      "image": "https://i.imgur.com/Y9j2fx9.png",
+      "image": "https://res.cloudinary.com/infiniteam/image/upload/v1617411892/f83651h7_tzmbdc.png",
       "abv": 12,
       "stock": [
         {"Navan Road": 2},
@@ -94,7 +94,7 @@
           "Sauvignon Blanc"
         ],
         "match": "Savoury",
-        "image": "https://i.imgur.com/DfKdwa5.png",
+        "image": "https://res.cloudinary.com/infiniteam/image/upload/v1617411892/z1306j6_dlunzf.png",
         "abv": 13.5,
         "stock": [
           {"Navan Road": 3},
@@ -121,7 +121,7 @@
           "Sauvignon Blanc"
         ],
         "match": "Savoury",
-        "image": "https://i.imgur.com/6KzVgLQ.png",
+        "image": "https://res.cloudinary.com/infiniteam/image/upload/v1617411892/z0982g6_fwfkig.png",
         "abv": 13,
         "stock": [
           {"Navan Road": 16},
@@ -148,7 +148,7 @@
           "Pinot Noir"
         ],
         "match": "Savoury",
-        "image": "https://i.imgur.com/PAGYlUn.png",
+        "image": "https://res.cloudinary.com/infiniteam/image/upload/v1617411892/z3722j9_qg2tvm.png",
         "abv": 14,
         "stock": [
           {"Navan Road": 16},
@@ -178,7 +178,7 @@
           "Shiraz / Syrah"
         ],
         "match": "Savoury",
-        "image": "https://i.imgur.com/bmHKawY.png",
+        "image": "https://res.cloudinary.com/infiniteam/image/upload/v1617411892/f1262k1_fbbdj8.png",
         "abv": 15,
         "stock": [
           {"Navan Road": 16},
@@ -205,7 +205,7 @@
           "Gamay"
         ],
         "match": "Acidic",
-        "image": "https://i.imgur.com/3dsXqde.png",
+        "image": "https://res.cloudinary.com/infiniteam/image/upload/v1617411892/f5522j3_pgopmo.png",
         "abv": 13.5,
         "stock": [
           {"Navan Road": 16},
@@ -234,7 +234,7 @@
           "Chardonnay"
         ],
         "match": "Savoury",
-        "image": "https://i.imgur.com/Wc5ht1O.png",
+        "image": "https://res.cloudinary.com/infiniteam/image/upload/v1617411892/s1901y6_imiq0g.png",
         "abv": 12,
         "stock": [
           {"Navan Road": 16},
@@ -264,7 +264,7 @@
           "Petit Verdot"
         ],
         "match": "Savoury",
-        "image": "https://i.imgur.com/vMtYxaa.png",
+        "image": "https://res.cloudinary.com/infiniteam/image/upload/v1617411892/s0912r4_jdsqqo.png",
         "abv": 14,
         "stock": [
           {"Navan Road": 16},
@@ -292,7 +292,7 @@
           "Malbec"
         ],
         "match": "Umami",
-        "image": "https://i.imgur.com/rtnB88L.png",
+        "image": "https://res.cloudinary.com/infiniteam/image/upload/v1617411892/a6228r3_udrd86.png",
         "abv": 14.5,
         "stock": [
           {"Navan Road": 16},

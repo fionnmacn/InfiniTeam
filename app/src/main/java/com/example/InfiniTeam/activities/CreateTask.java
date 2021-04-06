@@ -41,7 +41,7 @@ public class CreateTask extends AppCompatActivity {
                 task.put("priority", priority.isChecked());
                 task.saveInBackground();
 
-                Intent intent = new Intent(CreateTask.this, Tasks.class);
+                Intent intent = new Intent(CreateTask.this, Home.class);
                 startActivity(intent);
                 finish();
             }
